@@ -1,0 +1,3 @@
+http://localhost/GomSu/public/
+
+http://localhost/GomSu/public/admin/dangnhap

@@ -1,0 +1,105 @@
+ /*đưa về mặc định*/
+ *{
+    margin:0;
+    padding:0;
+ }
+ .container
+{
+    width:100%;
+}
+#progressbar
+{
+   margin-left: 200px;
+    counter-reset: step;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+#progressbar li
+{
+    float: left;
+    list-style-type: none;
+    width:33.33%;
+    position: relative;
+    text-align: center; 
+}
+#progressbar li:before
+{
+    content:counter(step);
+    counter-increment: step;
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #ddd;
+    display: block;
+    text-align: center;
+    margin:0px auto 10px auto;
+    border-radius: 50%;
+    background-color: #fff;
+
+}
+
+#progressbar li:after
+{
+    content:'';
+    position: absolute;
+    width:100%;
+    height:2px;
+    background-color: #ddd;
+    top: 15px;
+    left:-50%;
+    z-index: -1;
+}
+#progressbar li:first-child:after
+{
+    content:none;
+}
+#progressbar li.active
+{
+    color: #098409;
+}
+#progressbar li.active:before,#progressbar li.active:after
+{
+    background: #27AE60;
+    color:white;
+}
+#msform 
+{
+    /*width: 400px;*/
+    text-align: center;
+    position: relative;
+    margin: 50px auto;
+}
+  #msform fieldset
+  {
+    background: white;
+    border:0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
+    padding:20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin:0 10%;
+    position: absolute;
+  }
+  /*ẩn tất cả ngoại trừ trường set đầu tien*/
+#msform fieldset:not(:first-of-type)
+{
+    display: none;
+}
+#msform .action-button:hover,#msform .action-button:focus
+{
+    box-shadow: 0 0 0 2px white,0 0 0 3px #27AE60;
+}
+#msform .action-button
+{
+    width: 150px;
+    background: #27ae60;
+    font-weight: bold;
+    color:white;
+    border:0 none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px 5px;
+    margin:10px 5px;
+}
+
